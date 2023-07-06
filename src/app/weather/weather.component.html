@@ -1,3 +1,28 @@
-<p>
-  weather works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Weather</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Weather</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-input [(ngModel)]="city" placeholder="Enter a city"></ion-input>
+    <ion-button expand="full" (click)="search(city)">Search</ion-button>
+
+    <div *ngIf="weatherData">
+      <h2>{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+      <p>
+        Temperature: {{ weatherData.main.temp - 273.15 | number: "1.0-0" }}°C
+      </p>
+      <p>Humidity: {{ weatherData.main.humidity }}%</p>
+      <p>Wind speed: {{ weatherData.wind.speed }} m/s</p>
+      <p>Description: {{ weatherData.weather[0].description }}</p>
+    </div>
+  </div>
+</ion-content>
