@@ -1,3 +1,77 @@
-<p>
-  about works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>About Grox Productions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-img
+      src="https://steamuserimages-a.akamaihd.net/ugc/450662799388523736/691696E74945A2FD49237B5BDDED0FFBB7840881/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+      style="width: 400px"
+    ></ion-img>
+    <h2>Grox Productions</h2>
+    <p>
+      "Grox Productions is an innovative technology company, specialized in
+      creating compelling and user-centric mobile applications. Our commitment
+      to quality and passion for leveraging cutting-edge technologies set us
+      apart in the digital landscape. We believe in the power of technology to
+      transform lives and businesses, and it reflects in each application we
+      design and develop. At Grox Productions, we focus on delivering
+      high-performance applications that seamlessly blend functionality,
+      efficiency, and design. Our team comprises skilled professionals who are
+      fervent about their craft and consistently strive for excellence. With a
+      blend of creativity, technical expertise, and a deep understanding of our
+      clients' needs, we deliver solutions that surpass expectations and
+      redefine the standards of user experience. We are Grox Productions -
+      building tomorrow's mobile experiences today."
+    </p>
+
+    <section id="what-we-do">
+      <h2>What We Do</h2>
+      <p>
+        Ever thought of what it would be like to merge the charm of a unicorn,
+        the functionality of a Swiss Army knife, and the wisdom of Yoda? Welcome
+        to OurApp!
+      </p>
+
+      <p>
+        We, the guardians of digital realms and warriors of code, craft
+        cutting-edge applications that solve real-world problems. With a dash of
+        creativity and a sprinkle of innovative tech, we serve up app solutions
+        that are as unique as they are functional.
+      </p>
+
+      <p>
+        But that's not all. You know that glitch that turns your screen blue? Or
+        the sudden crash when you're just about to save your work? We help you
+        wave those troubles goodbye. At GroxProductions, we don't just code; we
+        fix, we improve, we evolve.
+      </p>
+
+      <p>
+        And, hey! Did you notice how this webpage seems to be aware of itself,
+        as if breaking the fourth wall? That's us, channeling our inner Deadpool
+        while working on our front-end development skills.
+      </p>
+    </section>
+    <h3>Our Team</h3>
+    <ion-list>
+      <ion-item *ngFor="let member of teamMembers">
+        <ion-avatar slot="start">
+          <img [src]="member.photo" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Tay Ribeiro</h2>
+          <p>
+            "Yeah that's me, the only dude in this project, but don't worry! I
+            added an empty field so i won't feel alone! See? Double Whammy!"
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <h3>Contact Us</h3>
+    <p>[Contact Information]</p>
+  </div>
+</ion-content>
