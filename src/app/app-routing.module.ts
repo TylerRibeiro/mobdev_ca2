@@ -8,7 +8,32 @@ const routes: Routes = [
   { path: "news", component: NewsComponent },
   { path: "weather", component: WeatherComponent },
   { path: "about", component: AboutComponent },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  {
+    path: "tabs",
+    loadChildren: () => import("./tabs/tabs.module").then((m) => m.TabsModule), // Import TabsModule instead of TabsPageModule
+    children: [
+      {
+        path: "tab1",
+        loadChildren: () =>
+          import("./tab1/tab1.module").then((m) => m.Tab1PageModule),
+      },
+      {
+        path: "tab2",
+        loadChildren: () =>
+          import("./tab2/tab2.module").then((m) => m.Tab2PageModule),
+      },
+      {
+        path: "",
+        redirectTo: "/tabs/tab1",
+        pathMatch: "full",
+      },
+    ],
+  },
+  {
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full",
+  },
   {
     path: "home",
     loadChildren: () =>
