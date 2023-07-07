@@ -10,24 +10,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   {
     path: "tabs",
-    loadChildren: () => import("./tabs/tabs.module").then((m) => m.TabsModule), // Import TabsModule instead of TabsPageModule
-    children: [
-      {
-        path: "tab1",
-        loadChildren: () =>
-          import("./tab1/tab1.module").then((m) => m.Tab1PageModule),
-      },
-      {
-        path: "tab2",
-        loadChildren: () =>
-          import("./tab2/tab2.module").then((m) => m.Tab2PageModule),
-      },
-      {
-        path: "",
-        redirectTo: "/tabs/tab1",
-        pathMatch: "full",
-      },
-    ],
+    loadChildren: () => import("./tabs/tabs.module").then((m) => m.TabsModule),
   },
   {
     path: "",
@@ -38,11 +21,6 @@ const routes: Routes = [
     path: "home",
     loadChildren: () =>
       import("./home/home.module").then((m) => m.HomePageModule),
-  },
-  {
-    path: "",
-    redirectTo: "home",
-    pathMatch: "full",
   },
 ];
 

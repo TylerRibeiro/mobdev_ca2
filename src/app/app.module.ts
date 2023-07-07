@@ -7,9 +7,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms"; // import FormsModule
 import { WeatherComponent } from "./weather/weather.component";
+import { NewsComponent } from "./news/news.component";
 
 @NgModule({
-  declarations: [AppComponent, WeatherComponent],
+  declarations: [AppComponent, WeatherComponent, NewsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

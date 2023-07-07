@@ -1,23 +1,23 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { IonicModule } from "@ionic/angular";
 import { CommonModule } from "@angular/common";
+import { IonicModule } from "@ionic/angular";
+import { RouterModule, Routes } from "@angular/router";
 import { TabsComponent } from "./tabs/tabs.component";
 
 const routes: Routes = [
   {
-    path: "tabs",
+    path: "",
     component: TabsComponent,
     children: [
       {
         path: "tab1",
         loadChildren: () =>
-          import("../tab1/tab1.module").then((m) => m.Tab1PageModule),
+          import("../tab1/tab1.module").then((m) => m.Tab1PageModule), // Use Tab1PageModule here
       },
       {
         path: "tab2",
         loadChildren: () =>
-          import("../tab2/tab2.module").then((m) => m.Tab2PageModule),
+          import("../tab2/tab2.module").then((m) => m.Tab2PageModule), // Use Tab2PageModule here
       },
       {
         path: "",
@@ -28,14 +28,14 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "tabs/tab1",
+    redirectTo: "tab1",
     pathMatch: "full",
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), CommonModule, IonicModule],
+  declarations: [TabsComponent],
+  imports: [CommonModule, IonicModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations: [TabsComponent], // Make sure to declare your TabsComponent
 })
-export class TabsModule {} // Export as TabsModule
+export class TabsModule {}
