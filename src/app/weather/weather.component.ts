@@ -8,7 +8,6 @@ import { WeatherService } from "../services/weather.service";
 })
 export class WeatherComponent implements OnInit {
   weatherData: any;
-  city: string = "London"; // Default city is London
 
   constructor(private weatherService: WeatherService) {}
 
@@ -17,13 +16,8 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather() {
-    this.weatherService.getWeather(this.city).subscribe((data: any) => {
+    this.weatherService.getWeather().subscribe((data: any) => {
       this.weatherData = data;
     });
-  }
-
-  search(city: string) {
-    this.city = city;
-    this.getWeather();
   }
 }
